@@ -3,7 +3,7 @@ import cakeActions from "../cake/cakeSlice"
 import { ordered as cakeOrdered } from "../cake/cakeSlice"
 
 const initialState = {
-  numOfIcecream: 20,
+  numOfIcecreams: 20,
 }
 
 export const icecreamSlice = createSlice({
@@ -11,10 +11,10 @@ export const icecreamSlice = createSlice({
   initialState,
   reducers: {
     ordered: (state) => {
-      state.numOfIcecream--
+      state.numOfIcecreams--
     },
     restocked: (state, action) => {
-      state.numOfIcecream += action.payload
+      state.numOfIcecreams += action.payload
     },
   },
   // one way of accessing reducer from different file
@@ -26,7 +26,7 @@ export const icecreamSlice = createSlice({
 
   extraReducers: (builder) => {
     builder.addCase(cakeOrdered, (state) => {
-      state.numOfIcecream--
+      state.numOfIcecreams--
     })
   },
 })
